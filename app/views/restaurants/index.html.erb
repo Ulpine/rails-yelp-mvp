@@ -1,0 +1,14 @@
+<div class="container">
+<h1 class="text-center shadow p-3 my-3">Voici la liste des restaurants</h1>
+
+<p class="list-group text-center my-3">
+  <% @restaurants.each do |restaurant| %>
+    <li class="list-group-item p-3 my-1 shadow">
+      <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none" %><br><br>
+      <%= link_to restaurant.category, restaurant_path(restaurant), class: "text-decoration-none" %>
+      </li>
+  <% end %>
+</p>
+
+<p><%= link_to "New", new_restaurant_path(@restaurant) %></p>
+</div>
